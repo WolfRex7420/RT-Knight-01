@@ -3,13 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public string levelToLoad;
+    public string Level0;
 
     public GameObject settingsWindow;
 
     public void StartGame()
     {
-        SceneManager.LoadScene(levelToLoad);
+        SceneManager.LoadScene("Level0");
     }
 
     public void SettingsButton()
