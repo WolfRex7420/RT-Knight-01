@@ -21,7 +21,7 @@ public class GameOverManager : MonoBehaviour
     public void OnPlayerDeath()
     {
         gameOverUI.SetActive(true);
-        SceneManager.LoadScene("YouDied")
+        SceneManager.LoadScene("YouDied");
     }
 
     public void RetryButton()
