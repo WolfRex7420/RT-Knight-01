@@ -3,21 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class YouDied : MonoBehaviour
 {
-    public string Level0;
-
-    public GameObject settingsWindow;
-
-    public void MainMenuScene()
+    public void GiveUp()
     {
         SceneManager.LoadScene("MainMenu");
     }
-    public void CreditsScene()
+    public void Retry()
     {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("Level0");
     }
 
-    public void GiveUp()
-    {
-        Application.Quit();
-    }
 }
