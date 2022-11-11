@@ -260,8 +260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2970}
-  m_SizeDelta: {x: 1184, y: 1322}
+  m_AnchoredPosition: {x: 0.0021133, y: -966.84}
+  m_SizeDelta: {x: 1618, y: 1521.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259042892
 MonoBehaviour:
@@ -601,12 +601,11 @@ MonoBehaviour:
     NAMATNIEKS</I></SIZE>\r\n\r\n<SIZE=62>SLIME  ENEMY\n<I>BY  NYKNCK</I></SIZE>\r\n\n<SIZE=62>UNDEAD 
     ENEMIES\n<I>BY  LUIZ  MELO</I></SIZE>\n\n<SIZE=62>UNDEAD  BOSS\n<I>BY  DARKPIXEL 
     KRONOVI</I></SIZE>\n\n<SIZE=62>HEALTHBAR\r\n<I>BY  VAMPIREGIRL</I></SIZE>\r\n\n<SIZE=62>KEYBOARD 
-    KEYS\n<I>BY  DREAMMIX</I></SIZE>\n\r\n<SIZE=62>PROPS\r\n<I>BY  N/A</I></SIZE>\r\n\r\n\r\n\r\n<SIZE=124>-
-    AUDIO -</SIZE>\r\n\r\n<SIZE=62>N/A\r\n<I>BY  N/A</I></SIZE>\r\n\r\n<SIZE=62>N/A\r\n<I>BY 
-    N/A</I></SIZE>\r\n\r\n<SIZE=62>N/A\n<I>BY  N/A</I></SIZE>\r\n\r\n\r\n\r\n<SIZE=124>-
-    FONT -</SIZE>\r\n\r\n<SIZE=62>PIXELATED\r\n<I>BY  SKYLAR  PARK</I></SIZE>\r\n\r\n\r\n\r\n<SIZE=124>-
-    SPECIAL  THANKS -</SIZE>\r\n\r\n<SIZE=62>PLAY  TESTERS\n\r\n<I>INSERT  NAME 
-    HERE</I></SIZE>\r\n\r\n\r\n<SIZE=74><I>THE  END,  FARWELL  FOR  NOW  .  .  .</I></SIZE>"
+    KEYS\n<I>BY  DREAMMIX</I></SIZE>\n\n\r\n<SIZE=124>- AUDIO -</SIZE>\r\n\r\n<SIZE=62>N/A\r\n<I>BY 
+    N/A</I></SIZE>\r\n\n\n<SIZE=124>- FONT -</SIZE>\r\n\r\n<SIZE=62>PIXELATED\r\n<I>BY 
+    SKYLAR  PARK</I></SIZE>\r\n\r\n\r\n<SIZE=124>- SPECIAL  THANKS -</SIZE>\r\n\r\n<SIZE=62>PLAY 
+    TESTERS\n\r\n<I>INSERT  NAME  HERE</I></SIZE>\r\n\r\n\r\n<SIZE=74><I>THE  END, 
+    FARWELL  FOR  NOW  .  .  .</I></SIZE>"
 --- !u!222 &2021327300
 CanvasRenderer:
   m_ObjectHideFlags: 0
