@@ -1076,10 +1076,14 @@ PrefabInstance:
     - target: {fileID: 1418070318252142363, guid: b499abadec474fe4ab59a14c8e202a80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1117764512}
     - target: {fileID: 1418070318252142363, guid: b499abadec474fe4ab59a14c8e202a80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: CloseSettingsWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418070318252142363, guid: b499abadec474fe4ab59a14c8e202a80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1418070318252142364, guid: b499abadec474fe4ab59a14c8e202a80, type: 3}
       propertyPath: m_AnchoredPosition.x

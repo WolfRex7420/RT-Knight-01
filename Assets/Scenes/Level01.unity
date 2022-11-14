@@ -769,7 +769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337040579}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.47, y: 3.79, z: 0.001991272}
+  m_LocalPosition: {x: 4.29, y: 4.17, z: 0.001991272}
   m_LocalScale: {x: 2.3, y: 2.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -825,11 +825,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea859a1a3187d604d89ec1a0f5eeabfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  speed: 5
   waypoints:
   - {fileID: 1207179535}
   - {fileID: 807786992}
-  damageOnCollision: 5
+  damageOnCollision: 7
   graphics: {fileID: 337040580}
 --- !u!95 &337040587
 Animator:
@@ -1475,7 +1475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752573969}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.47, y: 2.25, z: 0.001991272}
+  m_LocalPosition: {x: 6.56, y: 2.39, z: 0.001991272}
   m_LocalScale: {x: 2.3, y: 2.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1689,7 +1689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811331685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.46, y: 0.68, z: 0}
+  m_LocalPosition: {x: 14.67, y: 1.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1854,6 +1854,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01e577b41a28e040ad5797006d123b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
   turnedLeft: 0
 --- !u!114 &824980296
 MonoBehaviour:
@@ -2053,7 +2055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952521676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.92, y: -2.07, z: 0}
+  m_LocalPosition: {x: 10.57, y: -2.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3227,7 +3229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139559223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.88, y: 2.57, z: 0.001991272}
+  m_LocalPosition: {x: 6.92, y: 2.54, z: 0.001991272}
   m_LocalScale: {x: 2.3, y: 2.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3266,7 +3268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea859a1a3187d604d89ec1a0f5eeabfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 7
   waypoints:
   - {fileID: 752573970}
   - {fileID: 1862751425}
@@ -3276,7 +3278,7 @@ MonoBehaviour:
   - {fileID: 237083809}
   - {fileID: 973111175}
   - {fileID: 1582738491}
-  damageOnCollision: 10
+  damageOnCollision: 9
   graphics: {fileID: 1139559229}
 --- !u!70 &1139559227
 CapsuleCollider2D:
@@ -3605,7 +3607,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207179534}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.01, y: 3.51, z: 0.001991272}
+  m_LocalPosition: {x: 3.83, y: 3.89, z: 0.001991272}
   m_LocalScale: {x: 2.3, y: 2.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
