@@ -1781,10 +1781,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0027626234460084bb5277e42eb0321d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  invincibilityTimeAfterHit: 1
-  invincibilityFlashDelay: 0.2
+  maxHealth: 25
+  currentHealth: 100
+  invincibilityTimeAfterHit: 0.5
+  invincibilityFlashDelay: 0.1
   isInvincible: 0
   graphics: {fileID: 824980288}
   healthBar: {fileID: 1184542272}

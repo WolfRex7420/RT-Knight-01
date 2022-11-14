@@ -79,7 +79,7 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         PlayerScript.instance.enabled = false;
-        PlayerScript.instance.animator.SetTrigger("Die");
+        PlayerScript.instance.animator.SetTrigger("Death");
         PlayerScript.instance.rb.bodyType = RigidbodyType2D.Kinematic;
         PlayerScript.instance.rb.velocity = Vector3.zero;
         PlayerScript.instance.playerCollider.enabled = false;
