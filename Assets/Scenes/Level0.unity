@@ -794,7 +794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea859a1a3187d604d89ec1a0f5eeabfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  speed: 5
   waypoints:
   - {fileID: 1207179535}
   - {fileID: 807786992}
@@ -3792,7 +3792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea859a1a3187d604d89ec1a0f5eeabfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 7
   waypoints:
   - {fileID: 752573970}
   - {fileID: 1862751425}
@@ -3800,7 +3800,7 @@ MonoBehaviour:
   - {fileID: 1101905720}
   - {fileID: 973111175}
   - {fileID: 1582738491}
-  damageOnCollision: 5
+  damageOnCollision: 6
   graphics: {fileID: 1139559229}
 --- !u!70 &1139559227
 CapsuleCollider2D:
@@ -3881,7 +3881,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 906ad27146526e0498ef9704dfdb8ab0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.06549895, g: 1, b: 0, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
