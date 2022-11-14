@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
-    public GameObject settingsWindow;
+    //public GameObject settingsWindow;
 
     void Update()
     {
@@ -26,7 +26,7 @@ public class PauseMenu : MonoBehaviour
 
     void Paused()
     {
-        PlayerMovement.instance.enabled = false;
+        //PlayerMovement.instance.enabled = false;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         gameIsPaused = true;
@@ -34,12 +34,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        PlayerMovement.instance.enabled = true;
+        //PlayerMovement.instance.enabled = true;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         gameIsPaused = false;
     }
 
+    /*
     public void OpenSettingsWindow()
     {
         settingsWindow.SetActive(true);
@@ -49,6 +50,7 @@ public class PauseMenu : MonoBehaviour
     {
         settingsWindow.SetActive(false);
     }
+    */
 
     public void LoadMainMenu()
     {
