@@ -18,7 +18,7 @@ public class LoadAndSaveData : MonoBehaviour
 
     void Start()
     {
-       /* Inventory.instance.coinsCount = PlayerPrefs.GetInt("coinsCount", 0);
+        //Inventory.instance.coinsCount = PlayerPrefs.GetInt("coinsCount", 0);
         Inventory.instance.UpdateTextUI();
 
         string[] itemsSaved = PlayerPrefs.GetString("inventoryItems", "").Split(',');
@@ -33,12 +33,12 @@ public class LoadAndSaveData : MonoBehaviour
             }
         }
 
-        Inventory.instance.UpdateInventoryUI();*/
+        Inventory.instance.UpdateInventoryUI();
     }
 
-    /*public void SaveData()
+    public void SaveData()
     {
-        PlayerPrefs.SetInt("coinsCount", Inventory.instance.coinsCount);
+        //PlayerPrefs.SetInt("coinsCount", Inventory.instance.coinsCount);
 
         if(CurrentSceneManager.instance.levelToUnlock > PlayerPrefs.GetInt("levelReached", 1))
         {
@@ -47,6 +47,6 @@ public class LoadAndSaveData : MonoBehaviour
 
         string itemsInInventory = string.Join(",", Inventory.instance.content.Select(x => x.id));
         PlayerPrefs.SetString("inventoryItems", itemsInInventory);
-    }*/
+    }
 }
 

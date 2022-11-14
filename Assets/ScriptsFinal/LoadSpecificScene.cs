@@ -11,7 +11,7 @@ public class LoadSpecificScene : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             SceneManager.LoadScene(sceneName);
-            //LoadAndSaveData.instance.SaveData();
+            LoadAndSaveData.instance.SaveData();
 
         }
     }
