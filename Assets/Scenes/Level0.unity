@@ -1768,6 +1768,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01e577b41a28e040ad5797006d123b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 824980290}
+  animator: {fileID: 824980293}
   turnedLeft: 0
 --- !u!114 &824980296
 MonoBehaviour:
@@ -1781,8 +1783,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0027626234460084bb5277e42eb0321d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 25
-  currentHealth: 100
+  maxHealth: 50
+  currentHealth: 0
   invincibilityTimeAfterHit: 0.5
   invincibilityFlashDelay: 0.1
   isInvincible: 0

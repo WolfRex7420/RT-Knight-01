@@ -8,12 +8,24 @@ public class PlayerScript : MonoBehaviour
     private float horizontal;
     private float vertical;
     private float speed = 4.0f;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
+
+    public Animator animator;
 
     public bool turnedLeft = false;
 
-    public static PlayerMovement instance;
+    public static PlayerScript instance;
 
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PlayerHealth dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

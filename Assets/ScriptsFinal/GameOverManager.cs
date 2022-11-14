@@ -21,14 +21,13 @@ public class GameOverManager : MonoBehaviour
     public void OnPlayerDeath()
     {
         gameOverUI.SetActive(true);
-        SceneManager.LoadScene("YouDied");
     }
 
     public void RetryButton()
     {
-        Inventory.instance.RemoveCoins(CurrentSceneManager.instance.coinsPickedUpInThisSceneCount);
+        //Inventory.instance.RemoveCoins(CurrentSceneManager.instance.coinsPickedUpInThisSceneCount);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        PlayerHealth.instance.Respawn();
+        //PlayerHealth.instance.Respawn();
         gameOverUI.SetActive(false);
     }
 

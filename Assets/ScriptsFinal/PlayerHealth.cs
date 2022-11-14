@@ -82,11 +82,12 @@ public class PlayerHealth : MonoBehaviour
         PlayerScript.instance.animator.SetTrigger("Death");
         PlayerScript.instance.rb.bodyType = RigidbodyType2D.Kinematic;
         PlayerScript.instance.rb.velocity = Vector3.zero;
-        PlayerScript.instance.playerCollider.enabled = false;
+        //PlayerScript.instance.playerCollider.enabled = false;
         GameOverManager.instance.OnPlayerDeath();
+        Debug.Log("Player eliminated");
     }
 
-    public void Respawn()
+   /* public void Respawn()
     {
         PlayerScript.instance.enabled = true;
         PlayerScript.instance.animator.SetTrigger("Respawn");
@@ -94,7 +95,7 @@ public class PlayerHealth : MonoBehaviour
         PlayerScript.instance.playerCollider.enabled = true;
         currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth);
-    }
+    }*/
 
     public IEnumerator InvincibilityFlash()
     {
