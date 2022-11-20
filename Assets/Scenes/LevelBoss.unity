@@ -1309,8 +1309,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.055, y: -0.044}
-  m_Size: {x: 0.18, y: 0.47}
+  m_Offset: {x: 0.051915094, y: -0.053705312}
+  m_Size: {x: 0.18358041, y: 0.49864295}
   m_Direction: 0
 --- !u!50 &808847851
 Rigidbody2D:
@@ -1397,6 +1397,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfbe61e0015c42244a1366ca62a8df03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  damage: 20
+  graphics: {fileID: 808847852}
+  rb: {fileID: 808847851}
+  BossCollider: {fileID: 808847850}
+  health: 500
+  animator: {fileID: 808847848}
 --- !u!1 &830177003
 GameObject:
   m_ObjectHideFlags: 0

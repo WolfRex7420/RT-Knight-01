@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BossScript : MonoBehaviour
 {
-   /* public float speed;
+    public static BossScript instance;
+    public float speed;
     
     public int damage;
 
@@ -18,7 +19,7 @@ public class BossScript : MonoBehaviour
     private bool targetCollision = false;
 
     public Rigidbody2D rb;
-    public CapsuleCollider2D playerCollider;
+    public CapsuleCollider2D BossCollider;
 
     //private float thrust = 1.5f;
     public int health;
@@ -30,7 +31,7 @@ public class BossScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    /*void Update()
     {
 
         rb.velocity = new Vector2(horizontal * speed, vertical * speed);

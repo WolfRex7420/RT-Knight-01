@@ -62,20 +62,10 @@ public class BossHealth : MonoBehaviour
         BossScript.instance.rb.bodyType = RigidbodyType2D.Kinematic;
         BossScript.instance.rb.velocity = Vector3.zero;
         BossScript.instance.BossCollider.enabled = false;
-        GameOverManager.instance.OnBossDeath();
+        WinManager.instance.OnBossDeath();
         Debug.Log("Boss eliminated");
         
     }
-
-    /* public void Respawn()
-     {
-         PlayerScript.instance.enabled = true;
-         PlayerScript.instance.animator.SetTrigger("Respawn");
-         PlayerScript.instance.rb.bodyType = RigidbodyType2D.Dynamic;
-         PlayerScript.instance.playerCollider.enabled = true;
-         currentHealth = maxHealth;
-         healthBar.SetHealth(currentHealth);
-     }*/
 
     public IEnumerator InvincibilityFlash()
     {
