@@ -260,7 +260,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0021133, y: -966.84}
+  m_AnchoredPosition: {x: 0, y: -1274}
   m_SizeDelta: {x: 1618, y: 1521.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259042892
@@ -490,7 +490,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: -3631}
-  m_SizeDelta: {x: 0, y: 7262.2847}
+  m_SizeDelta: {x: 0, y: 7262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1446187205
 Animator:
@@ -605,7 +605,7 @@ MonoBehaviour:
     N/A</I></SIZE>\r\n\n\n<SIZE=124>- FONT -</SIZE>\r\n\r\n<SIZE=62>PIXELATED\r\n<I>BY 
     SKYLAR  PARK</I></SIZE>\r\n\r\n\r\n<SIZE=124>- SPECIAL  THANKS -</SIZE>\r\n\r\n<SIZE=62>PLAY 
     TESTERS\n\r\n<I>INSERT  NAME  HERE</I></SIZE>\r\n\r\n\r\n<SIZE=74><I>THE  END, 
-    FARWELL  FOR  NOW  .  .  .</I></SIZE>"
+    FARWELL  FOR  NOW  .  .  .</I></SIZE>\n"
 --- !u!222 &2021327300
 CanvasRenderer:
   m_ObjectHideFlags: 0
