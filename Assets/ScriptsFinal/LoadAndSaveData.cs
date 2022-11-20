@@ -19,7 +19,7 @@ public class LoadAndSaveData : MonoBehaviour
     void Start()
     {
         //Inventory.instance.coinsCount = PlayerPrefs.GetInt("coinsCount", 0);
-        Inventory.instance.UpdateTextUI();
+        //Inventory.instance.UpdateTextUI();
 
         string[] itemsSaved = PlayerPrefs.GetString("inventoryItems", "").Split(',');
 
@@ -33,7 +33,7 @@ public class LoadAndSaveData : MonoBehaviour
             }
         }
 
-        Inventory.instance.UpdateInventoryUI();
+        //Inventory.instance.UpdateInventoryUI();
     }
 
     public void SaveData()

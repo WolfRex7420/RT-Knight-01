@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     private float vertical;
     private float speed = 4.0f;
     public Rigidbody2D rb;
+    public CapsuleCollider2D playerCollider;
 
     public Animator animator;
 
