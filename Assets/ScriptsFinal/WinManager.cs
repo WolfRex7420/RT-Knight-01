@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class WinManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject WinManagerUI;
+
+    public static WinManager instance;
+
+    private void Awake()
     {
-        
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de WinManager dans la scène");
+            return;
+        }
+
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnBossDeath()
     {
-        
+        WinManagerUI.SetActive(true);
+    }
+
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void LoadCreditsScene()
+    {
+        SceneManager.LoadScene("Credits");
     }
 }
