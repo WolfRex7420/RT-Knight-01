@@ -1413,6 +1413,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2170111801934758580, guid: 65981d3c378f9544eb04b9328c727e29, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2170111801934758581, guid: 65981d3c378f9544eb04b9328c727e29, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1422,8 +1426,9 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 737803516, guid: 65981d3c378f9544eb04b9328c727e29, type: 3}
     - {fileID: 1949798533, guid: 65981d3c378f9544eb04b9328c727e29, type: 3}
+    - {fileID: 737803516, guid: 65981d3c378f9544eb04b9328c727e29, type: 3}
+    - {fileID: 554308861, guid: 65981d3c378f9544eb04b9328c727e29, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 65981d3c378f9544eb04b9328c727e29, type: 3}
 --- !u!114 &672707897 stripped
