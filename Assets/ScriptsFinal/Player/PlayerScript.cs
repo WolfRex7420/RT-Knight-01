@@ -41,7 +41,6 @@ public class PlayerScript : MonoBehaviour
         rb.velocity = new Vector2(horizontal * speed, vertical * speed);
         turnedLeft = false;
 
-
         if (horizontal > 0)
         {
             GetComponent<Animator>().Play("RunR");
@@ -55,7 +54,20 @@ public class PlayerScript : MonoBehaviour
         {
             GetComponent<Animator>().Play("Idle");
         }
+        
+        if (Input.GetKeyDown(KeyCode.Space) && !turnedLeft)
+        {
+            animator.SetTrigger("Dodge");
 
-
+        }else if (Input.GetKeyDown(KeyCode.Space) && turnedLeft)
+        {
+            Vector3 flipped = transform.localScale;
+            flipped.z *= -1f;
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            animator.SetTrigger("Dodge");
+            turnedLeft=true;
+        }
+        animator.ResetTrigger("Dodge");
     }
 }

@@ -32,6 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.91, y: 0.58, z: -4.6660156}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -62,7 +63,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
-  settingsWindow: {fileID: 0}
 --- !u!114 &2170111801934758580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,8 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pnjNameText: {fileID: 0}
   animator: {fileID: 0}
-  sellButtonPrefab: {fileID: 7462366240536247313, guid: 29b496e09eda5af45ad41b93b2b17305,
-    type: 3}
+  sellButtonPrefab: {fileID: 7462366240536247313, guid: 29b496e09eda5af45ad41b93b2b17305, type: 3}
   sellButtonsParent: {fileID: 0}
 --- !u!114 &554308861
 MonoBehaviour:

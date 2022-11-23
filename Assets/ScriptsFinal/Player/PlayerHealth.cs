@@ -1,8 +1,8 @@
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class BossHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
@@ -14,15 +14,15 @@ public class BossHealth : MonoBehaviour
     public SpriteRenderer graphics;
     public HealthBar healthBar;
 
-    //public AudioClip hitSound;
+    public AudioClip hitSound;
 
-    public static BossHealth instance;
+    public static PlayerHealth instance;
 
     private void Awake()
     {
         if (instance != null)
         {
-            Debug.LogWarning("Il y a plus d'une instance de BossHealth dans la sc�ne");
+            Debug.LogWarning("Il y a plus d'une instance de PlayerHealth dans la scène");
             return;
         }
 
@@ -35,6 +35,28 @@ public class BossHealth : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            TakeDamage(25);
+        }
+    }
+
+    public void HealPlayer(int amount)
+    {
+        if((currentHealth + amount) > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else
+        {
+            currentHealth += amount;
+        }
+
+        healthBar.SetHealth(currentHealth);
+    }
+
     public void TakeDamage(int damage)
     {
         if (!isInvincible)
@@ -43,7 +65,7 @@ public class BossHealth : MonoBehaviour
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
 
-            if (currentHealth <= 0)
+            if(currentHealth <= 0)
             {
                 Die();
                 return;
@@ -57,15 +79,24 @@ public class BossHealth : MonoBehaviour
 
     public void Die()
     {
-        BossScript.instance.enabled = false;
-        BossScript.instance.animator.SetTrigger("DeathBoss");
-        BossScript.instance.rb.bodyType = RigidbodyType2D.Kinematic;
-        BossScript.instance.rb.velocity = Vector3.zero;
-        BossScript.instance.BossCollider.enabled = false;
-        WinManager.instance.OnBossDeath();
-        Debug.Log("Boss eliminated");
-        
+        PlayerScript.instance.enabled = false;
+        PlayerScript.instance.animator.SetTrigger("Death");
+        PlayerScript.instance.rb.bodyType = RigidbodyType2D.Kinematic;
+        PlayerScript.instance.rb.velocity = Vector3.zero;
+        PlayerScript.instance.playerCollider.enabled = false;
+        GameOverManager.instance.OnPlayerDeath();
+        Debug.Log("Player eliminated");
     }
+
+   /* public void Respawn()
+    {
+        PlayerScript.instance.enabled = true;
+        PlayerScript.instance.animator.SetTrigger("Respawn");
+        PlayerScript.instance.rb.bodyType = RigidbodyType2D.Dynamic;
+        PlayerScript.instance.playerCollider.enabled = true;
+        currentHealth = maxHealth;
+        healthBar.SetHealth(currentHealth);
+    }*/
 
     public IEnumerator InvincibilityFlash()
     {

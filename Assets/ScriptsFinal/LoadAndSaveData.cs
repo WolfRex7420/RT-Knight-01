@@ -1,11 +1,11 @@
-﻿/*using UnityEngine;
+﻿using UnityEngine;
 using System.Linq;
 
 public class LoadAndSaveData : MonoBehaviour
 {
     public static LoadAndSaveData instance;
 
-    private void Awake()
+    /*private void Awake()
     {
         if (instance != null)
         {
@@ -48,5 +48,4 @@ public class LoadAndSaveData : MonoBehaviour
         string itemsInInventory = string.Join(",", Inventory.instance.content.Select(x => x.id));
         PlayerPrefs.SetString("inventoryItems", itemsInInventory);
     }
-}
-*/
+*/}

@@ -12,7 +12,6 @@ public class LoadSpecificScene : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName);
             //LoadAndSaveData.instance.SaveData();
-
         }
     }
 }

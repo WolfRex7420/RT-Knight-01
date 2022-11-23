@@ -26,13 +26,15 @@ public class GameOverManager : MonoBehaviour
     public void RetryButton()
     {
         //Inventory.instance.RemoveCoins(CurrentSceneManager.instance.coinsPickedUpInThisSceneCount);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        SceneManager.LoadScene("Level0");
         //PlayerHealth.instance.Respawn();
         gameOverUI.SetActive(false);
     }
 
     public void MainMenuButton()
     {
+        //DontDestroyOnSceneLoad.RemoveFromDestroy();
         SceneManager.LoadScene("MainMenu");
     }
 

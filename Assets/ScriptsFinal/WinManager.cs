@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,12 +23,22 @@ public class WinManager : MonoBehaviour
         WinManagerUI.SetActive(true);
     }
 
-    public void MainMenuButton()
+    public void Retry()
     {
+        //Inventory.instance.RemoveCoins(CurrentSceneManager.instance.coinsPickedUpInThisSceneCount);
+
+        SceneManager.LoadScene("Level0");
+        //PlayerHealth.instance.Respawn();
+        WinManagerUI.SetActive(false);
+    }
+
+    public void MainMenu()
+    {
+        //DontDestroyOnSceneLoad.RemoveFromDestroy();
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void LoadCreditsScene()
+    public void LoadCredits()
     {
         SceneManager.LoadScene("Credits");
     }

@@ -21,9 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelBoss.unity
     guid: 665c409098fa90244bcdbd6e224f1bcc
   - enabled: 1
-    path: Assets/Scenes/YouDied.unity
-    guid: a1a618bb8f7424841a57939b9f117b93
-  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 8e94dbdd7b903e34c81b7a4ea2d7b4ce
   m_configObjects: {}
