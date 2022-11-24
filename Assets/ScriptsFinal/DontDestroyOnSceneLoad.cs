@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontDestroyOnSceneLoad : MonoBehaviour
 {
@@ -12,8 +13,11 @@ public class DontDestroyOnSceneLoad : MonoBehaviour
             DontDestroyOnLoad(element);
         }
     }
+
     /*public RemoveFromDestroy()
     {
-
+        //if retry button is pressed stop dont destroy on load
+        //if main menu is accesed stop dont destroy on load
+        
     }*/
 }
