@@ -424,7 +424,7 @@ MonoBehaviour:
   - {fileID: 1225221817}
   - {fileID: 1767203135}
   - {fileID: 1575826475}
-  damageOnCollision: 20
+  damageOnCollision: 12
   graphics: {fileID: 486110971}
   health: 15
 --- !u!70 &486110969
@@ -32748,7 +32748,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1008509595}
   - {fileID: 1794435608}
-  damageOnCollision: 10
+  damageOnCollision: 7
   graphics: {fileID: 1803887928}
   health: 7
 --- !u!70 &1803887926

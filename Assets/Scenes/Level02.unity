@@ -745,9 +745,9 @@ MonoBehaviour:
   - {fileID: 1221788997}
   - {fileID: 607582068}
   - {fileID: 420598685}
-  damageOnCollision: 15
+  damageOnCollision: 7
   graphics: {fileID: 796865807}
-  health: 10
+  health: 7
 --- !u!70 &796865805
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -913,9 +913,9 @@ MonoBehaviour:
   - {fileID: 1092969391}
   - {fileID: 646955817}
   - {fileID: 740729217}
-  damageOnCollision: 10
+  damageOnCollision: 15
   graphics: {fileID: 808847852}
-  health: 7
+  health: 10
 --- !u!70 &808847850
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

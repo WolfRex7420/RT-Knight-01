@@ -933,7 +933,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1207179535}
   - {fileID: 807786992}
-  damageOnCollision: 10
+  damageOnCollision: 7
   graphics: {fileID: 337040580}
   health: 7
 --- !u!95 &337040587
@@ -2133,7 +2133,7 @@ MonoBehaviour:
   isInvincible: 0
   graphics: {fileID: 824980288}
   healthBar: {fileID: 1184542272}
-  hitSound: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: ab0975610a78d0e44b9e18439635b2cf, type: 3}
 --- !u!1 &832458793
 GameObject:
   m_ObjectHideFlags: 0
@@ -4220,7 +4220,7 @@ MonoBehaviour:
   - {fileID: 1101905720}
   - {fileID: 973111175}
   - {fileID: 1582738491}
-  damageOnCollision: 15
+  damageOnCollision: 12
   graphics: {fileID: 1139559229}
   health: 10
 --- !u!70 &1139559227
