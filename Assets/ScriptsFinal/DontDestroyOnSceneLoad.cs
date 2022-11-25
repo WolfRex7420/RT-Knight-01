@@ -22,7 +22,7 @@ public class DontDestroyOnSceneLoad : MonoBehaviour
         }
     }
 
-    public void RemoveFromDestroy()
+    /*public void RemoveFromDestroy()
     {
         //if retry button is pressed stop dont destroy on load
         //if main menu is accesed stop dont destroy on load
@@ -30,5 +30,5 @@ public class DontDestroyOnSceneLoad : MonoBehaviour
         {
             DestroyImmediate(Instance);
         }
-    }
+    }*/
 }
