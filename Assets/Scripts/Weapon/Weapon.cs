@@ -46,12 +46,12 @@ public class Weapon : MonoBehaviour
     {
         if (player.GetComponent<PlayerScript>().turnedLeft)
         {
-            transform.localScale = new Vector3(-1.8f, 1.8f, 1);
+            transform.localScale = new Vector3(1.2f, 1.15f, 1);
             weaponX = -0.3f;
         }
         else
         {
-            transform.localScale = new Vector3(1.8f, 1.8f, 1);
+            transform.localScale = new Vector3(1.2f, 1.15f, 1);
             weaponX = 0.3f;
         }
         pos = player.transform.position;
