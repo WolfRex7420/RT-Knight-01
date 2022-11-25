@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
+    public GameObject EndLevelDoor;
     public int maxHealth = 500;
     public int currentHealth;
 
@@ -12,7 +13,7 @@ public class BossHealth : MonoBehaviour
     public bool isInvincible = false;
 
     public SpriteRenderer graphics;
-    public HealthBar healthBar;
+    public BossHealthBar healthBar;
 
     //public AudioClip hitSound;
 
@@ -64,7 +65,8 @@ public class BossHealth : MonoBehaviour
         BossScript.instance.BossCollider.enabled = false;
         WinManager.instance.OnBossDeath();
         Debug.Log("Boss eliminated");
-        
+        EndLevelDoor.SetActive(true);
+
     }
 
     public IEnumerator InvincibilityFlash()
