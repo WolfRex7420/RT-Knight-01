@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Weapon : MonoBehaviour
+public class WeaponScript : MonoBehaviour
 {
     private bool swing = false;
     int degree = 0;
-    private float weaponY = -0.4f;
-    private float weaponX = 0.3f;
+    private float weaponY = -0.038f;
+    private float weaponX = 0.084f;
     public Sprite[] upgrades;
     private int spriteIndex = 0;
     public int weaponPower;
@@ -46,7 +46,7 @@ public class Weapon : MonoBehaviour
     {
         if (player.GetComponent<PlayerScript>().turnedLeft)
         {
-            transform.localScale = new Vector3(1.2f, 1.15f, 1);
+            transform.localScale = new Vector3(0.084f, -0.038f, 1);
             weaponX = -0.3f;
         }
         else
