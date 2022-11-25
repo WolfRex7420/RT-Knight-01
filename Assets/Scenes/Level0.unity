@@ -4302,11 +4302,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1112194719}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1e5b73fbe81bba4a879a79d8bb7af70, type: 3}
+  m_Script: {fileID: 11500000, guid: 02e4ff4cfcd74dd4c9b690f0d6f271b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   upgrades:
-  - {fileID: 21300000, guid: fa65211f44cb52f4bbfaacd758c88b3f, type: 3}
+  - {fileID: 21300000, guid: 3482057ba81e2484baa4c275bd450296, type: 3}
   - {fileID: 21300000, guid: 305a8b5f03ecd704b9ee3485ad116e0b, type: 3}
   weaponPower: 1
   player: {fileID: 824980286}
