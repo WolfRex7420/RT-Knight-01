@@ -7,8 +7,10 @@ public class WeaponScript : MonoBehaviour
 {
     private bool swing = false;
     int degree = 0;
-    private float weaponY = -0.038f;
-    private float weaponX = 0.084f;
+
+    private float weaponX = -0.2f;
+    private float weaponY = 0.1f;
+
     //public Sprite[] upgrades;
     //private int spriteIndex = 0;
     public int weaponPower;
@@ -21,7 +23,7 @@ public class WeaponScript : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             GetComponent<SpriteRenderer>().enabled = true;
-            //transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(0).gameObject.SetActive(true);
             Attack();
         }
     }
@@ -36,7 +38,7 @@ public class WeaponScript : MonoBehaviour
                 degree = 0;
                 swing = false;
                 GetComponent<SpriteRenderer>().enabled = false;
-                //transform.GetChild(0).gameObject.SetActive(false);
+                transform.GetChild(0).gameObject.SetActive(false);
             }
             transform.eulerAngles = Vector3.forward * degree;
         }
@@ -46,13 +48,15 @@ public class WeaponScript : MonoBehaviour
     {
         if (player.GetComponent<PlayerScript>().turnedLeft)
         {
+            GetComponent<SpriteRenderer>().flipX = true;
             transform.localScale = new Vector3(-0.069f, -0.038f, 0);
-            weaponX = -0.069f;
+            weaponX = -0.0f;
         }
         else
         {
+            GetComponent<SpriteRenderer>().flipX = false;
             transform.localScale = new Vector3(0.084f, -0.038f, 0);
-            weaponX = 0.3f;
+            weaponX = 0.f;
         }
         pos = player.transform.position;
         pos.x += weaponX;
