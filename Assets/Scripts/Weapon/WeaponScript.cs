@@ -32,8 +32,8 @@ public class WeaponScript : MonoBehaviour
     {
         if (swing)
         {
-            degree -= 7;
-            if (degree < -65)
+            degree += 7;
+            if (degree < -30)
             {
                 degree = 0;
                 swing = false;
@@ -50,13 +50,13 @@ public class WeaponScript : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().flipX = true;
             transform.localScale = new Vector3(-0.069f, -0.038f, 0);
-            weaponX = -0.0f;
+           // weaponX = -0.0f;
         }
         else
         {
             GetComponent<SpriteRenderer>().flipX = false;
             transform.localScale = new Vector3(0.084f, -0.038f, 0);
-            weaponX = 0.f;
+            //weaponX = 0.f;
         }
         pos = player.transform.position;
         pos.x += weaponX;
