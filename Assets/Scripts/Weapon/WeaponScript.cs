@@ -9,8 +9,8 @@ public class WeaponScript : MonoBehaviour
     int degree = 0;
     private float weaponY = -0.038f;
     private float weaponX = 0.084f;
-    public Sprite[] upgrades;
-    private int spriteIndex = 0;
+    //public Sprite[] upgrades;
+    //private int spriteIndex = 0;
     public int weaponPower;
 
     Vector3 pos;
@@ -46,12 +46,12 @@ public class WeaponScript : MonoBehaviour
     {
         if (player.GetComponent<PlayerScript>().turnedLeft)
         {
-            transform.localScale = new Vector3(0.084f, -0.038f, 1);
-            weaponX = -0.3f;
+            transform.localScale = new Vector3(-0.069f, -0.038f, 0);
+            weaponX = -0.069f;
         }
         else
         {
-            transform.localScale = new Vector3(1.2f, 1.15f, 1);
+            transform.localScale = new Vector3(0.084f, -0.038f, 0);
             weaponX = 0.3f;
         }
         pos = player.transform.position;
@@ -61,7 +61,7 @@ public class WeaponScript : MonoBehaviour
         swing = true;
     }
 
-    public void UpgradeWeapon()
+   /* public void UpgradeWeapon()
     {
         if (spriteIndex < upgrades.Length - 1)
         {
@@ -69,5 +69,5 @@ public class WeaponScript : MonoBehaviour
         }
         GetComponent<SpriteRenderer>().sprite = upgrades[spriteIndex];
         weaponPower++;
-    }
+    }*/
 }
