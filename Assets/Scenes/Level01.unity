@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea859a1a3187d604d89ec1a0f5eeabfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 5.5
   waypoints:
   - {fileID: 1877420857}
   - {fileID: 1775967471}
@@ -32744,7 +32744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea859a1a3187d604d89ec1a0f5eeabfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  speed: 3.75
   waypoints:
   - {fileID: 1008509595}
   - {fileID: 1794435608}
