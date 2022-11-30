@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviour
 
     public Animator animator;
 
-    public bool turnedLeft = false;
+    public bool turnedLeft;
 
     public static PlayerScript instance;
 
@@ -55,11 +55,11 @@ public class PlayerScript : MonoBehaviour
             GetComponent<Animator>().Play("Idle");
         }
         
-        if (Input.GetKeyDown(KeyCode.Space) && !turnedLeft)
+        /*if (Input.GetKeyDown(KeyCode.C) && !turnedLeft)
         {
             animator.SetTrigger("Dodge");
 
-        }else if (Input.GetKeyDown(KeyCode.Space) && turnedLeft)
+        }else if (Input.GetKeyDown(KeyCode.C) && turnedLeft)
         {
             Vector3 flipped = transform.localScale;
             flipped.z *= -1f;
@@ -67,6 +67,11 @@ public class PlayerScript : MonoBehaviour
             //transform.Rotate(0f, 180f, 0f);
             animator.SetTrigger("Dodge");
         }
-        animator.ResetTrigger("Dodge");
+        animator.ResetTrigger("Dodge");*/
+
+        /*if (Input.GetKeyDown(KeyCode.Space))
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
+        }*/
     }
 }
