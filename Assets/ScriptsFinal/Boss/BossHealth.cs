@@ -58,15 +58,14 @@ public class BossHealth : MonoBehaviour
 
     public void BossDie()
     {
-        BossScript.instance.enabled = false;
-        BossScript.instance.animator.SetTrigger("BDeath");
-        BossScript.instance.rb.bodyType = RigidbodyType2D.Kinematic;
-        BossScript.instance.rb.velocity = Vector3.zero;
-        BossScript.instance.BossCollider.enabled = false;
+        Boss.instance.enabled = false;
+        Boss.instance.Banimator.SetTrigger("BDeath");
+        Boss.instance.Brb.bodyType = RigidbodyType2D.Kinematic;
+        Boss.instance.Brb.velocity = Vector3.zero;
+        Boss.instance.BossCollider.enabled = false;
         WinManager.instance.OnBossDeath();
         Debug.Log("Boss eliminated");
-        EndLevelDoor.SetActive(true);
-
+        //EndLevelDoor.SetActive(true);
     }
 
     public IEnumerator InvincibilityFlash()

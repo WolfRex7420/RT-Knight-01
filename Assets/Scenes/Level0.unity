@@ -36006,6 +36006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WinManagerUI: {fileID: 1533839356}
+  DontDetroyOnSceneLoada: {fileID: 1615466301}
 --- !u!114 &1615466304 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2170111801934758569, guid: 65981d3c378f9544eb04b9328c727e29, type: 3}

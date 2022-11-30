@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class WinManager : MonoBehaviour
 {
     public GameObject WinManagerUI;
+    public GameObject DontDetroyOnSceneLoada;
 
     public static WinManager instance;
 
@@ -41,5 +42,6 @@ public class WinManager : MonoBehaviour
     public void LoadCredits()
     {
         SceneManager.LoadScene("Credits");
+        Destroy(DontDetroyOnSceneLoada);
     }
 }

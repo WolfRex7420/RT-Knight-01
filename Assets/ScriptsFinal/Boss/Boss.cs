@@ -13,6 +13,23 @@ public class Boss : MonoBehaviour
 
     public int damageOnCollision;
 
+    public Rigidbody2D Brb;
+    public CapsuleCollider2D BossCollider;
+
+    public Animator Banimator;
+
+    public static Boss instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance du Boss dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
 
     public void LookAtPlayer()
     {
