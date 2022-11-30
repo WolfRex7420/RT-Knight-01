@@ -43,12 +43,18 @@ public class PlayerScript : MonoBehaviour
 
         if (horizontal > 0)
         {
+            transform.Rotate(0f, 0f, 0f);
             GetComponent<Animator>().Play("RunR");
         }
         else if (horizontal < 0)
         {
-            GetComponent<Animator>().Play("RunL");
+            Vector3 flipped = transform.localScale;
+            flipped.z *= -1f;
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            GetComponent<Animator>().Play("RunR");
             turnedLeft = true;
+            
         }
         else if (horizontal == 0)
         {
