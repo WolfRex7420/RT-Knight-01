@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerRoll : MonoBehaviour
 {
-    [SerializeField] private Transform pfDashEffect;
+    /*[SerializeField] private Transform pfDashEffect;
     private PlayerCharacter_Base playerCharacterBase;
     private Vector3 lastMoveDir;
 
@@ -134,5 +134,5 @@ public class PlayerRoll : MonoBehaviour
             float dashEffectWidth = 30f;
             dashEffectTransform.localscale = new vector3(dashDistance / dashEffectWidth, 1f, 1f);
         }
-    }
+    }*/
 }
