@@ -36,7 +36,6 @@ public class PlayerScript : MonoBehaviour
     }
     void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         rayHit = GameObject.Find("RayHit");
     }
@@ -54,7 +53,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (!isAttacking)
             {
-                animator.Play("RunR");
+                GetComponent<Animator>().Play("RunR");
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -65,7 +64,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (!isAttacking)
             {
-                animator.Play("RunL");
+                GetComponent<Animator>().Play("RunL");
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -77,7 +76,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (!isAttacking)
             {
-                animator.Play("Idle");
+                GetComponent<Animator>().Play("Idle");
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -102,7 +101,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (!isAttacking)
             {
-                animator.Play("attack1");
+            GetComponent<Animator>().Play("attack1");
 
                 RaycastHit hit;
 
