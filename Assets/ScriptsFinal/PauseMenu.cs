@@ -40,18 +40,6 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
     }
 
-    /*
-    public void OpenSettingsWindow()
-    {
-        settingsWindow.SetActive(true);
-    }
-
-    public void CloseSettingsWindow()
-    {
-        settingsWindow.SetActive(false);
-    }
-    */
-
     public void LoadMainMenu()
     {
         Resume();

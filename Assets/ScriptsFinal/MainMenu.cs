@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Level0");
+        SceneManager.LoadScene("LevelFull");
     }
 
     public void SettingsButton()

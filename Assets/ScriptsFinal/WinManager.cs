@@ -27,7 +27,7 @@ public class WinManager : MonoBehaviour
     {
         //Inventory.instance.RemoveCoins(CurrentSceneManager.instance.coinsPickedUpInThisSceneCount);
 
-        SceneManager.LoadScene("Level0");
+        SceneManager.LoadScene("LevelFull");
         //PlayerHealth.instance.Respawn();
         WinManagerUI.SetActive(false);
     }
