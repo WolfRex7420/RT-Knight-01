@@ -101,7 +101,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (!isAttacking)
             {
-            GetComponent<Animator>().Play("attack1");
+               GetComponent<Animator>().Play("attack1");
 
                 RaycastHit hit;
 
@@ -109,7 +109,7 @@ public class PlayerScript : MonoBehaviour
                 {
                     Debug.DrawLine(rayHit.transform.position, hit.point, Color.red);
 
-                    if (hit.transform.tag == "test")
+                    if (hit.transform.tag == "Enemy")
                     {
                         print(hit.transform.name + " detected");
                     }
