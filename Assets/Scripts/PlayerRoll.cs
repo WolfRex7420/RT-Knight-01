@@ -2,31 +2,137 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRoll : StateMachineBehaviour
+
+public class PlayerRoll : MonoBehaviour
 {
-    Rigidbody2D rb;
-    PlayerScript player;
+    [SerializeField] private Transform pfDashEffect;
+    private PlayerCharacter_Base playerCharacterBase;
+    private Vector3 lastMoveDir;
 
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    private State state;
+    private enum State
     {
-        rb = animator.GetComponent<Rigidbody2D>();
-        player = animator.GetComponent<PlayerScript>();
-
+        Normal,
+        DodgeRollSliding,
     }
 
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    private void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        playerCharacterBase = gameObject.GetComponent<playerCharacter_Base>();
+        state = State.Normal;
+    }
+
+    private void Update()
+    {
+        switch (state)
         {
-            animator.SetTrigger("Dodge");
+            case State.Normal:
+                HandleMovement();
+                HandleDash();
+                HandleDodgeRoll();
+                break;
+            case State.DodgeRollsliding:
+                HandleDodgeRollsliding();
+                break;
         }
     }
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    private void HandleMovement()
     {
-        animator.ResetTrigger("Dodge");
+        float speed = 50f;
+        float moveX = 0f;
+        float moveY = 0f;
+
+        if (Input.GetKey(KeyCode.Z))
+        {
+            moveY = +1f;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            moveY = -1f;
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            moveX = -1f;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            moveX = +1f;
+        }
+
+        bool isIdle = moveX == 0 && moveY == 0;
+
+        if (isIdle)
+        {
+            playerCharacterBase.PlayIdleAnimation(lastMoveDir);
+        }
+        else
+        {
+            Vector3 moveDir = new Vector3(moveX, moveY).normalized;
+
+            if (TryMove(moveDir, speed * Time.deltaTime))
+            {
+                playerCharacterBase.PlaywalkingAnimation(lastMoveDir);
+            }
+            else
+            {
+                playerCharacterBase.PlayIdleAnimation(lastMoveDir);
+
+            }
+        }
+    }
+
+    private bool CanMove(Vector3 dir, float distance)
+    {
+        return Physics20.Raycast(transform.position, dir, distance).collider == null;
+    }
+
+    private bool TryMove(Vector3 baseMoveDir, float distance)
+    {
+        Vector3 moveDir = baseMoveDir;
+        bool canMove = CanMove(moveDir, distance);
+
+        if (!canMove)
+        {
+            // Cannot move diagonally
+            moveDir = new Vector3(baseMoveDir.x, 0f).normalized;
+            canMove = moveDir.x != 0f & CanHove(moveDir, distance);
+        }
+        if (!canMove)
+        {
+            // Cannot move horizontally
+            moveDir = new Vector3(0f, baseMoveDir.y).normalized;
+            canMove = moveDir.y != 0f && CanMove(moveDir, distance);
+        }
+
+        if (canMove)
+        {
+            lastMoveDir = moveDir;
+            transform.position += moveDir * distance;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void HandleDash()
+    {
+        if (Input.GetKeyDown(keyCode.Shift))
+        {
+            float dashDistance = 30f;
+        }
+
+        Vector3 beforeDashPosition = transform.position;
+
+        if (TryMove(lastMoveDir, dashDistance))
+        {
+            Transform dashEffectTransform = Instantiate(pfDashEffect, beforeDashPosition, Quaternion.identity);
+
+            dashEffectTransform.eulerAngles = new vector3(0, 0, UtilsClass.GetAngleFromVectorFloat(lastMoveDir));
+            float dashEffectWidth = 30f;
+            dashEffectTransform.localscale = new vector3(dashDistance / dashEffectWidth, 1f, 1f);
+        }
     }
 }
