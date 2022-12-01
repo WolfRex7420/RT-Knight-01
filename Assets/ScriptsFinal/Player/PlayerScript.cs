@@ -55,11 +55,11 @@ public class PlayerScript : MonoBehaviour
             GetComponent<Animator>().Play("Idle");
         }
         
-        /*if (Input.GetKeyDown(KeyCode.C) && !turnedLeft)
+       /* if (Input.GetKeyDown(KeyCode.LeftShift) && !turnedLeft)
         {
             animator.SetTrigger("Dodge");
 
-        }else if (Input.GetKeyDown(KeyCode.C) && turnedLeft)
+        }else if (Input.GetKeyDown(KeyCode.LeftShift) && turnedLeft)
         {
             Vector3 flipped = transform.localScale;
             flipped.z *= -1f;
