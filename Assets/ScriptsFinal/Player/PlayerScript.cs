@@ -49,7 +49,7 @@ public class PlayerScript : MonoBehaviour
 
         rb.velocity = new Vector2(horizontal * speed, vertical * speed);
         turnedLeft = false;
-        
+
         if (horizontal > 0)
         {
             if (!isAttacking)
@@ -58,7 +58,7 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Attack();
+                Attacking();
             }
         }
         else if (horizontal < 0)
@@ -69,7 +69,7 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Attack();
+                Attacking();
             }
             turnedLeft = true;
         }
@@ -81,7 +81,7 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Attack();
+                Attacking();
             }
         }
 
@@ -95,13 +95,14 @@ public class PlayerScript : MonoBehaviour
             currentCooldown = attackCooldown;
             isAttacking = false;
         }
+    }
 
         // Fonction d'attaque
-        public void Attack()
+        public void Attacking()
         {
             if (!isAttacking)
             {
-                animations.Play("attack");
+                animator.Play("attack1");
 
                 RaycastHit hit;
 
@@ -117,7 +118,5 @@ public class PlayerScript : MonoBehaviour
                 }
                 isAttacking = true;
             }
-
         }
-    }
 }
