@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-    public GameObject EndLevelDoor;
+    //public GameObject EndLevelDoor;
     public int maxHealth = 500;
     public int currentHealth;
 
