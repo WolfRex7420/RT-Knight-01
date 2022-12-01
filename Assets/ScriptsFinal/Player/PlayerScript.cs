@@ -57,7 +57,7 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Attacking();
+                Attack();
             }
         }
         else if (horizontal < 0)
@@ -68,7 +68,7 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Attacking();
+                Attack();
             }
             turnedLeft = true;
         }
@@ -80,7 +80,7 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Attacking();
+                Attack();
             }
         }
 
@@ -97,7 +97,7 @@ public class PlayerScript : MonoBehaviour
     }
 
         // Fonction d'attaque
-        public void Attacking()
+        public void Attack()
         {
             if (!isAttacking)
             {
