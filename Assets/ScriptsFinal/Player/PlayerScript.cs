@@ -15,6 +15,13 @@ public class PlayerScript : MonoBehaviour
 
     public bool turnedLeft;
 
+    // Variables concernant l'attaque
+    public float attackCooldown;
+    private bool isAttacking;
+    private float currentCooldown;
+    public float attackRange;
+    public GameObject rayHit;
+
     public static PlayerScript instance;
 
     private void Awake()
@@ -29,7 +36,9 @@ public class PlayerScript : MonoBehaviour
     }
     void Start()
     {
+        animator = gameObject.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        rayHit = GameObject.Find("RayHit");
     }
 
     // Update is called once per frame
@@ -43,35 +52,72 @@ public class PlayerScript : MonoBehaviour
         
         if (horizontal > 0)
         {
-            GetComponent<Animator>().Play("RunR");
+            if (!isAttacking)
+            {
+                animator.Play("RunR");
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Attack();
+            }
         }
         else if (horizontal < 0)
         {
-            GetComponent<Animator>().Play("RunL");
+            if (!isAttacking)
+            {
+                animator.Play("RunL");
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Attack();
+            }
             turnedLeft = true;
         }
         else if (horizontal == 0)
         {
-            GetComponent<Animator>().Play("Idle");
+            if (!isAttacking)
+            {
+                animator.Play("Idle");
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Attack();
+            }
         }
-        
-       /* if (Input.GetKeyDown(KeyCode.LeftShift) && !turnedLeft)
-        {
-            animator.SetTrigger("Dodge");
 
-        }else if (Input.GetKeyDown(KeyCode.LeftShift) && turnedLeft)
+        if (isAttacking)
         {
-            Vector3 flipped = transform.localScale;
-            flipped.z *= -1f;
-            transform.localScale = flipped;
-            //transform.Rotate(0f, 180f, 0f);
-            animator.SetTrigger("Dodge");
+            currentCooldown -= Time.deltaTime;
         }
-        animator.ResetTrigger("Dodge");*/
 
-        /*if (Input.GetKeyDown(KeyCode.Space))
+        if (currentCooldown <= 0)
         {
-            transform.GetChild(0).gameObject.SetActive(true);
-        }*/
+            currentCooldown = attackCooldown;
+            isAttacking = false;
+        }
+
+        // Fonction d'attaque
+        public void Attack()
+        {
+            if (!isAttacking)
+            {
+                animations.Play("attack");
+
+                RaycastHit hit;
+
+                if (Physics.Raycast(rayHit.transform.position, transform.TransformDirection(Vector3.forward), out hit, attackRange))
+                {
+                    Debug.DrawLine(rayHit.transform.position, hit.point, Color.red);
+
+                    if (hit.transform.tag == "test")
+                    {
+                        print(hit.transform.name + " detected");
+                    }
+
+                }
+                isAttacking = true;
+            }
+
+        }
     }
 }
