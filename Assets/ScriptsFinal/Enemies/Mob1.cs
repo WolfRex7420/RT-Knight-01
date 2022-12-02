@@ -2,6 +2,8 @@
 
 public class Mob1 : MonoBehaviour
 {
+    public GameObject slimeEnemy;
+
     public float speed;
     public Transform[] waypoints;
 
@@ -120,6 +122,7 @@ public class Mob1 : MonoBehaviour
         Mob1.S1instance.Srb.bodyType = RigidbodyType2D.Kinematic;
         Mob1.S1instance.Srb.velocity = Vector3.zero;
         Mob1.S1instance.SlimeCollider.enabled = false;
-        Debug.Log("Mob1 eliminated");
+        Destroy(slimeEnemy);
+        Debug.Log("Mob eliminated");
     }
 }

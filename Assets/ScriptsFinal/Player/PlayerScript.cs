@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public SpriteRenderer PlayerGraphics;
+
+    PlayerHealth playerHealth;
 
     private float horizontal;
     private float vertical;
@@ -38,6 +41,7 @@ public class PlayerScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rayHit = GameObject.Find("RayHit");
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -62,6 +66,7 @@ public class PlayerScript : MonoBehaviour
         }
         else if (horizontal < 0)
         {
+            playerHealth.graphics.transform(180f, 0f, 0f);
             if (!isAttacking)
             {
                 GetComponent<Animator>().Play("RunL");
