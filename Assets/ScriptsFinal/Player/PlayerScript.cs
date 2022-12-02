@@ -101,7 +101,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (!isAttacking)
             {
-               GetComponent<Animator>().Play("attack1");
+               GetComponent<Animator>().Play("Attack1");
 
                 RaycastHit hit;
 
