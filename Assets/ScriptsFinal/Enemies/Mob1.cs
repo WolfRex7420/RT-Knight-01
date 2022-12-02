@@ -137,6 +137,7 @@ public class Mob1 : MonoBehaviour
         Mob1.instance.Srb.bodyType = RigidbodyType2D.Kinematic;
         Mob1.instance.Srb.velocity = Vector3.zero;
         Mob1.instance.SlimeCollider.enabled = false;
+        Mob1.instance.graphics.enabled = false;
         Debug.Log("Mob eliminated");
     }
 
