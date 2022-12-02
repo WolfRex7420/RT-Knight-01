@@ -11,6 +11,9 @@ public class EnemyPatrol : MonoBehaviour
     private Transform target;
     private int destPoint = 0;
 
+    public Rigidbody2D Srb;
+    public CapsuleCollider2D SlimeCollider;
+
     private float range;
     
     private float minDistance = 5f;
@@ -18,6 +21,10 @@ public class EnemyPatrol : MonoBehaviour
     
     //private float thrust = 1.5f;
     public int health = 10;
+
+    public Animator SlimeAnimator;
+
+    public static EnemyPatrol Sinstance;
 
     void Start()
     {
@@ -52,6 +59,11 @@ public class EnemyPatrol : MonoBehaviour
             }
         }
         transform.rotation = Quaternion.identity;
+        if (health <= 0)
+        {
+            MobDeath();
+            return;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -88,6 +100,15 @@ public class EnemyPatrol : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
+    }
 
+    public void MobDeath()
+    {
+        //EnemyPatrol.Sinstance.enabled = false;
+        EnemyPatrol.Sinstance.SlimeAnimator.SetTrigger("Died");
+        EnemyPatrol.Sinstance.Srb.bodyType = RigidbodyType2D.Kinematic;
+        EnemyPatrol.Sinstance.Srb.velocity = Vector3.zero;
+        EnemyPatrol.Sinstance.SlimeCollider.enabled = false;
+        Debug.Log("Enemy eliminated");
     }
 }

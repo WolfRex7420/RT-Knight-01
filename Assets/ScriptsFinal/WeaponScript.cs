@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponScript : MonoBehaviour
 { //aha
     public BoxCollider2D collider;
+    public int weaponDamage;
 
     public void start()
     {
@@ -14,7 +15,7 @@ public class WeaponScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            //collision.gameObject.GetComponent<EnemyPatrol>().TakeDamage(weaponDamage);
+            collision.gameObject.GetComponent<EnemyPatrol>().TakeDamage(weaponDamage);
         }
     }
 }
