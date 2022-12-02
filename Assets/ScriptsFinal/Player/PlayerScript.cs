@@ -6,7 +6,9 @@ public class PlayerScript : MonoBehaviour
 {
     public SpriteRenderer PlayerGraphics;
 
-    PlayerHealth playerHealth;
+    public PlayerHealth playerHealth;
+
+    public float Speed;
 
     private float horizontal;
     private float vertical;
@@ -41,14 +43,13 @@ public class PlayerScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rayHit = GameObject.Find("RayHit");
-        playerHealth = GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxis("Horizontal") * Speed * Time.fixedDeltaTime;
+        vertical = Input.GetAxis("Vertical") * Speed * Time.fixedDeltaTime;
 
         rb.velocity = new Vector2(horizontal * speed, vertical * speed);
         turnedLeft = false;
@@ -66,7 +67,8 @@ public class PlayerScript : MonoBehaviour
         }
         else if (horizontal < 0)
         {
-            playerHealth.graphics.transform(180f, 0f, 0f);
+            //playerHealth.graphics.transform(180f, 0f, 0f);
+
             if (!isAttacking)
             {
                 GetComponent<Animator>().Play("RunL");
