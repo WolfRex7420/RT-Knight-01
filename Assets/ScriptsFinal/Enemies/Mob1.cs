@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Mob1 : MonoBehaviour
 {
@@ -8,6 +10,10 @@ public class Mob1 : MonoBehaviour
     public Transform[] waypoints;
 
     public int damageOnCollision;
+
+    public float invincibilityTimeAfterHit = 2f;
+    public float invincibilityFlashDelay = 0.2f;
+    public bool isInvincible = false;
 
     public SpriteRenderer graphics;
     private Transform target;
@@ -26,7 +32,7 @@ public class Mob1 : MonoBehaviour
 
     public Animator SlimeAnimator;
 
-    public static Mob1 S1instance;
+    public static Mob1 instance;
 
     void Start()
     {
@@ -35,13 +41,13 @@ public class Mob1 : MonoBehaviour
     
     public void Awake()
     {
-        if (S1instance != null)
+        if (instance != null)
         {
             Debug.LogWarning("Il y a plus d'une instance de Enemy Patrol1 dans la scène");
             return;
         }
 
-        S1instance = this;
+        instance = this;
     }
 
     void Update()
@@ -72,11 +78,6 @@ public class Mob1 : MonoBehaviour
             }
         }
         transform.rotation = Quaternion.identity;
-        if (health <= 0)
-        {
-            MobDeath();
-            return;
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -110,19 +111,49 @@ public class Mob1 : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = Vector3.zero;
     }
 
-    public void TakeDamage1(int amount)
+    public void TakeDamage(int damage)
     {
-        health -= amount;
+        if (!isInvincible)
+        {
+            //AudioManager.instance.PlayClipAt(hitSound, transform.position);
+            health -= damage;
+
+            if (health <= 0)
+            {
+                MobDeath();
+                return;
+            }
+
+            isInvincible = true;
+            StartCoroutine(InvincibilityFlash());
+            StartCoroutine(HandleInvincibilityDelay());
+        }
     }
 
     public void MobDeath()
     {
-        //Mob1.Sinstance.enabled = false;
-        Mob1.S1instance.SlimeAnimator.SetTrigger("Died");
-        Mob1.S1instance.Srb.bodyType = RigidbodyType2D.Kinematic;
-        Mob1.S1instance.Srb.velocity = Vector3.zero;
-        Mob1.S1instance.SlimeCollider.enabled = false;
-        Destroy(slimeEnemy);
+        Mob1.instance.enabled = false;
+        Mob1.instance.SlimeAnimator.SetTrigger("BDeath");
+        Mob1.instance.Srb.bodyType = RigidbodyType2D.Kinematic;
+        Mob1.instance.Srb.velocity = Vector3.zero;
+        Mob1.instance.SlimeCollider.enabled = false;
         Debug.Log("Mob eliminated");
+    }
+
+    public IEnumerator InvincibilityFlash()
+    {
+        while (isInvincible)
+        {
+            graphics.color = new Color(1f, 1f, 1f, 0f);
+            yield return new WaitForSeconds(invincibilityFlashDelay);
+            graphics.color = new Color(1f, 1f, 1f, 1f);
+            yield return new WaitForSeconds(invincibilityFlashDelay);
+        }
+    }
+
+    public IEnumerator HandleInvincibilityDelay()
+    {
+        yield return new WaitForSeconds(invincibilityTimeAfterHit);
+        isInvincible = false;
     }
 }

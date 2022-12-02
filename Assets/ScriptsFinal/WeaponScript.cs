@@ -16,7 +16,12 @@ public class WeaponScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<Mob1>().TakeDamage1(weaponDamage);
+            collision.gameObject.GetComponent<BossHealth>().TakeDamage(weaponDamage);
+        }
+
+        if (collision.gameObject.CompareTag("EnemyS"))
+        {
+            collision.gameObject.GetComponent<Mob1>().TakeDamage(weaponDamage);
         }
     }
 }
