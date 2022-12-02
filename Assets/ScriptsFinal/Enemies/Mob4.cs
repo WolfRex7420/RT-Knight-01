@@ -2,10 +2,10 @@
 
 public class Mob4 : MonoBehaviour
 {
-    public float speed=4.5;
+    public float speed;
     public Transform[] waypoints;
 
-    public int damageOnCollision=8;
+    public int damageOnCollision;
 
     public SpriteRenderer graphics;
     private Transform target;
@@ -20,7 +20,7 @@ public class Mob4 : MonoBehaviour
     private bool targetCollision = false;
 
     //private float thrust = 1.5f;
-    public int health = 8;
+    public int health;
 
     public Animator SlimeAnimator;
 
