@@ -15,7 +15,7 @@ public class BossScript : MonoBehaviour
 
     public SpriteRenderer graphics;
     private Transform target;
-    private int destPoint = 0;
+    //private int destPoint = 0;
 
     private float range;
 

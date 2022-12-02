@@ -24,7 +24,7 @@ public class EnemyPatrol : MonoBehaviour
 
     public Animator SlimeAnimator;
 
-    public static EnemyPatrol Sinstance;
+    private static EnemyPatrol Sinstance;
 
     void Start()
     {
