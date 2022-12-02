@@ -84,6 +84,41 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
+        else if (vertical == 0)
+        {
+            if (!isAttacking)
+            {
+                GetComponent<Animator>().Play("Idle");
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Attack();
+            }
+        }
+        else if (vertical > 0)
+        {
+            if (!isAttacking)
+            {
+                GetComponent<Animator>().Play("RunUp");
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Attack();
+            }
+        }
+        else if (vertical < 0)
+        {
+            if (!isAttacking)
+            {
+                GetComponent<Animator>().Play("RunDown");
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Attack();
+            }
+        }
+
+
         if (isAttacking)
         {
             currentCooldown -= Time.deltaTime;
