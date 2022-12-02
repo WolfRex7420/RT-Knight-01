@@ -637,6 +637,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01e577b41a28e040ad5797006d123b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerGraphics: {fileID: 498600097}
+  playerHealth: {fileID: 498600092}
+  Speed: 70
   rb: {fileID: 498600096}
   playerCollider: {fileID: 498600094}
   animator: {fileID: 498600095}
