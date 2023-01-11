@@ -59,6 +59,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (!isAttacking)
             {
+                GetComponent<SpriteRenderer>().flipX = false;
                 GetComponent<Animator>().Play("RunR");
             }
             if (Input.GetKeyDown(KeyCode.Space))
@@ -72,7 +73,8 @@ public class PlayerScript : MonoBehaviour
 
             if (!isAttacking)
             {
-                GetComponent<Animator>().Play("RunL");
+                GetComponent<SpriteRenderer>().flipX = true;
+                GetComponent<Animator>().Play("RunR");
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -144,8 +146,12 @@ public class PlayerScript : MonoBehaviour
         {
             if (!isAttacking)
             {
-               GetComponent<Animator>().Play("Attack1");
+            if (turnedLeft = true)
+            {
 
+            }
+               GetComponent<Animator>().Play("Attack1");
+            
                 Sword.SetActive(true);
                 isAttacking = true;
             }
