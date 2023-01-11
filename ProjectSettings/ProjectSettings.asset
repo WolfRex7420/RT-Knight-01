@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: LM
+  companyName: WR & Co
   productName: A Knights Journey
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -141,7 +141,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 200
+  bundleVersion: 4.20
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -161,7 +161,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.WR-A-Knights-Journey
+    Standalone: com.WR-Co.A-Knights-Journey
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -689,7 +689,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 2
+  activeInputHandler: 0
   cloudProjectId: 70db981b-a7cf-4f06-8810-935c00e4c3f5
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
