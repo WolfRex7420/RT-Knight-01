@@ -26,6 +26,7 @@ public class PlayerScript : MonoBehaviour
     private float currentCooldown;
     public float attackRange;
     public GameObject rayHit;
+    public GameObject Sword;
 
     public static PlayerScript instance;
 
@@ -145,18 +146,7 @@ public class PlayerScript : MonoBehaviour
             {
                GetComponent<Animator>().Play("Attack1");
 
-                RaycastHit hit;
-
-                if (Physics.Raycast(rayHit.transform.position, transform.TransformDirection(Vector3.forward), out hit, attackRange))
-                {
-                    Debug.DrawLine(rayHit.transform.position, hit.point, Color.red);
-
-                    if (hit.transform.tag == "Enemy")
-                    {
-                        print(hit.transform.name + " detected");
-                    }
-
-                }
+                Sword.SetActive(true);
                 isAttacking = true;
             }
         }
