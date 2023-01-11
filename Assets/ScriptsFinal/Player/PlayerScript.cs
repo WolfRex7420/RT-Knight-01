@@ -22,8 +22,11 @@ public class PlayerScript : MonoBehaviour
 
     // Variables concernant l'attaque
     public float attackCooldown;
+    public float rollCooldown;
     private bool isAttacking;
+    public bool isRolling;
     private float currentCooldown;
+    private float rollingCooldown;
     public float attackRange;
     public GameObject rayHit;
     public GameObject Sword;
@@ -57,7 +60,7 @@ public class PlayerScript : MonoBehaviour
 
         if (horizontal > 0)
         {
-            if (!isAttacking)
+            if (!isAttacking && !isRolling)
             {
                 GetComponent<SpriteRenderer>().flipX = false;
                 GetComponent<Animator>().Play("RunR");
@@ -68,14 +71,14 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.LeftControl))
             {
-                GetComponent<Animator>().Play("Roll");
+                Roll();
             }
         }
         else if (horizontal < 0)
         {
             //playerHealth.graphics.transform(180f, 0f, 0f);
 
-            if (!isAttacking)
+            if (!isAttacking && !isRolling)
             {
                 GetComponent<SpriteRenderer>().flipX = true;
                 GetComponent<Animator>().Play("RunR");
@@ -86,13 +89,14 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.LeftControl))
             {
-                GetComponent<Animator>().Play("Roll");
+                Roll();
             }
             turnedLeft = true;
         }
+
         else if (horizontal == 0)
         {
-            if (!isAttacking)
+            if (!isAttacking && !isRolling)
             {
                 GetComponent<Animator>().Play("Idle");
             }
@@ -102,13 +106,13 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.LeftControl))
             {
-                GetComponent<Animator>().Play("Roll");
+                Roll();
             }
         }
 
         else if (vertical == 0)
         {
-            if (!isAttacking)
+            if (!isAttacking && !isRolling)
             {
                 GetComponent<Animator>().Play("Idle");
             }
@@ -118,12 +122,12 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.LeftControl))
             {
-                GetComponent<Animator>().Play("Roll");
+                Roll();
             }
         }
         else if (vertical > 0)
         {
-            if (!isAttacking)
+            if (!isAttacking && !isRolling)
             {
                 GetComponent<Animator>().Play("RunUp");
             }
@@ -133,12 +137,12 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.LeftControl))
             {
-                GetComponent<Animator>().Play("Roll");
+                Roll();
             }
         }
         else if (vertical < 0)
         {
-            if (!isAttacking)
+            if (!isAttacking && !isRolling)
             {
                 GetComponent<Animator>().Play("RunDown");
             }
@@ -148,7 +152,7 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.LeftControl))
             {
-                GetComponent<Animator>().Play("Roll");
+                Roll();
             }
         }
 
@@ -161,9 +165,17 @@ public class PlayerScript : MonoBehaviour
         {
             currentCooldown = attackCooldown;
             isAttacking = false;
+        } 
+        if (isRolling)
+        {
+            rollingCooldown -= Time.deltaTime;
         }
 
-        
+        if (rollingCooldown <= 0)
+        {
+            rollingCooldown = rollCooldown;
+            isRolling = false;
+        }
     }
 
         // Fonction d'attaque
@@ -177,4 +189,10 @@ public class PlayerScript : MonoBehaviour
                 isAttacking = true;
             }
         }
+
+    public void Roll()
+    {
+        GetComponent<Animator>().Play("Roll");
+        isRolling = true;
+    }
 }
