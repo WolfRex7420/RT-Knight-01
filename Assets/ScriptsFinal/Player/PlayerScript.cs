@@ -146,7 +146,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (!isAttacking)
             {
-            if (turnedLeft = true)
+            if (turnedLeft == true)
             {
 
             }
