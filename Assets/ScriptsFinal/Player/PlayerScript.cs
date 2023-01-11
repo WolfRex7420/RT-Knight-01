@@ -94,7 +94,7 @@ public class PlayerScript : MonoBehaviour
             turnedLeft = true;
         }
 
-        else if (horizontal == 0)
+        else if (horizontal == 0 || vertical == 0)
         {
             if (!isAttacking && !isRolling)
             {
@@ -110,21 +110,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-        else if (vertical == 0)
-        {
-            if (!isAttacking && !isRolling)
-            {
-                GetComponent<Animator>().Play("Idle");
-            }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Attack();
-            }
-            if (Input.GetKeyDown(KeyCode.LeftControl))
-            {
-                Roll();
-            }
-        }
+        
         else if (vertical > 0)
         {
             if (!isAttacking && !isRolling)
