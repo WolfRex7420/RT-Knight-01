@@ -24,6 +24,8 @@ public class Enemy_behaviour : MonoBehaviour
     private bool cooling; //Check if Enemy is cooling after attack
     private float intTimer;
 
+    public GameObject hitbox;
+
     void Awake()
     {
         SelectTarget();
@@ -115,7 +117,8 @@ public class Enemy_behaviour : MonoBehaviour
         timer = intTimer; //Reset Timer when Player enter Attack Range
         attackMode = true; //To check if Enemy can still attack or not
 
-        //anim.SetBool("canWalk", false);
+        hitbox.SetActive(true);
+
         anim.SetBool("Attack", true);
         Debug.Log("Attacked");
         

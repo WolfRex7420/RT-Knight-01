@@ -187,7 +187,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (!isRolling)
         {
-            GetComponent<Animator>().Play("Dodge");
+            GetComponent<Animator>().Play("Roll");
             isRolling = true;
         }
     }
