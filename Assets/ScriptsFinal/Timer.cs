@@ -36,13 +36,13 @@ public class Timer : MonoBehaviour
         if (BombButtonTimer == false)
         {
             currentTime -= 1 * Time.deltaTime;
-            countdownText.text = string.Format("{0:00} : {1:00}",  (int)currentTime/60, (int)currentTime%60);
+            countdownText.text = string.Format("{0:00} : {1:00}",  (int)currentTime/60, (int)currentTime%60); 
         }
 
         if (currentTime <= 0)
         {
             currentTime = 0;
-            PlayerHealth.instance.TakeDamage(420);
+            PlayerHealth.instance.TakeDamage(50);layerHealth.instance.TakeDamage(50);
             Debug.Log("Player is Kablewy");
         }
     }
