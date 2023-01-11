@@ -66,6 +66,10 @@ public class PlayerScript : MonoBehaviour
             {
                 Attack();
             }
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                GetComponent<Animator>().Play("Roll");
+            }
         }
         else if (horizontal < 0)
         {
@@ -80,6 +84,10 @@ public class PlayerScript : MonoBehaviour
             {
                 Attack();
             }
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                GetComponent<Animator>().Play("Roll");
+            }
             turnedLeft = true;
         }
         else if (horizontal == 0)
@@ -91,6 +99,10 @@ public class PlayerScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Attack();
+            }
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                GetComponent<Animator>().Play("Roll");
             }
         }
 
@@ -104,6 +116,10 @@ public class PlayerScript : MonoBehaviour
             {
                 Attack();
             }
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                GetComponent<Animator>().Play("Roll");
+            }
         }
         else if (vertical > 0)
         {
@@ -114,6 +130,10 @@ public class PlayerScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Attack();
+            }
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                GetComponent<Animator>().Play("Roll");
             }
         }
         else if (vertical < 0)
@@ -126,8 +146,11 @@ public class PlayerScript : MonoBehaviour
             {
                 Attack();
             }
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                GetComponent<Animator>().Play("Roll");
+            }
         }
-
 
         if (isAttacking)
         {
@@ -139,6 +162,8 @@ public class PlayerScript : MonoBehaviour
             currentCooldown = attackCooldown;
             isAttacking = false;
         }
+
+        
     }
 
         // Fonction d'attaque
@@ -146,10 +171,6 @@ public class PlayerScript : MonoBehaviour
         {
             if (!isAttacking)
             {
-            if (turnedLeft == true)
-            {
-
-            }
                GetComponent<Animator>().Play("Attack1");
             
                 Sword.SetActive(true);
