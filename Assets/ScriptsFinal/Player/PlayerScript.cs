@@ -60,9 +60,10 @@ public class PlayerScript : MonoBehaviour
 
         if (horizontal > 0)
         {
+            GetComponent<SpriteRenderer>().flipX = false;
+
             if (!isAttacking && !isRolling)
             {
-                GetComponent<SpriteRenderer>().flipX = false;
                 GetComponent<Animator>().Play("RunR");
             }
             if (Input.GetKeyDown(KeyCode.Space))
@@ -76,11 +77,10 @@ public class PlayerScript : MonoBehaviour
         }
         else if (horizontal < 0)
         {
-            //playerHealth.graphics.transform(180f, 0f, 0f);
+            GetComponent<SpriteRenderer>().flipX = true;
 
             if (!isAttacking && !isRolling)
             {
-                GetComponent<SpriteRenderer>().flipX = true;
                 GetComponent<Animator>().Play("RunR");
             }
             if (Input.GetKeyDown(KeyCode.Space))
@@ -177,6 +177,12 @@ public class PlayerScript : MonoBehaviour
             isRolling = false;
             GetComponent<Animator>().SetBool("Dodge", false);
         }
+
+        /*if (isRolling)
+        {
+            GetComponent<Animator>().SetBool("Dodge", true);
+        }*/
+       
     }
 
         // Fonction d'attaque
@@ -193,7 +199,10 @@ public class PlayerScript : MonoBehaviour
 
     public void Roll()
     {
-        GetComponent<Animator>().SetBool("Dodge", true);
-        isRolling = true;
+        if (!isRolling)
+        {
+            GetComponent<Animator>().Play("Dodge");
+            isRolling = true;
+        }
     }
 }
