@@ -166,15 +166,16 @@ public class PlayerScript : MonoBehaviour
             currentCooldown = attackCooldown;
             isAttacking = false;
         } 
+
         if (isRolling)
         {
             rollingCooldown -= Time.deltaTime;
         }
-
         if (rollingCooldown <= 0)
         {
             rollingCooldown = rollCooldown;
             isRolling = false;
+            GetComponent<Animator>().SetBool("Dodge", false);
         }
     }
 
@@ -192,7 +193,7 @@ public class PlayerScript : MonoBehaviour
 
     public void Roll()
     {
-        GetComponent<Animator>().Play("Roll");
+        GetComponent<Animator>().SetBool("Dodge", true);
         isRolling = true;
     }
 }

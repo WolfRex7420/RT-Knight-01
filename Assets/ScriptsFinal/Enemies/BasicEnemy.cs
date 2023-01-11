@@ -33,4 +33,13 @@ public class BasicEnemy : MonoBehaviour
         //GetComponent<Droper>().InstantiateLoot(transform.position);
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("Weapon"))
+        {
+            Debug.Log("HIT");
+            TakeDamage(20);
+        }
+    }
 }
