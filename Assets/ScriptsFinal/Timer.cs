@@ -42,7 +42,7 @@ public class Timer : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
-            PlayerHealth.instance.TakeDamage(50);layerHealth.instance.TakeDamage(50);
+            PlayerHealth.instance.TakeDamage(50);PlayerHealth.instance.TakeDamage(50);
             Debug.Log("Player is Kablewy");
         }
     }
